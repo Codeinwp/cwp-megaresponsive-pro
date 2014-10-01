@@ -51,16 +51,15 @@ jQuery(function($){
 	
     
 
-    $(window).scroll(function(){
+    	$(window).scroll(function(){
           
-            var content_offset = $content.offset(); 
-//            loading = true;
+        	var content_offset = $content.offset(); 
             
-            if((load == true)&&($(window).scrollTop() >= $(window).height() - 100)) {
-                load_posts();
-				page++;
-			}
-    })
+            	if(load == true) {
+                	load_posts();
+			page++;
+		}
+    	});
   
 load_posts();
 });
