@@ -276,6 +276,7 @@ function cwp_megaresponsive_pro_latest_post_category() {
 										if ( $cwp_megaresponsive_pro_query->have_posts() ):
 		
 											while ( $cwp_megaresponsive_pro_query->have_posts() ):
+												$cwp_megaresponsive_pro_query->the_post();
 											?>
 												<div class="frontpage-little-post">
 													<a href="<?php echo get_the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>" class="frontpage-little-img">
