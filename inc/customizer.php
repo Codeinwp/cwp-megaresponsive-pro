@@ -1,6 +1,6 @@
 <?php
 /**
- * CWP-MegaR Theme Customizer
+ * cwp-megaresponsive-pro Theme Customizer
  *
  * @package cwp-megaresponsive-pro
  */
@@ -24,8 +24,8 @@ function cwp_megar_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
-
-    $wp_customize->remove_section( 'colors' );
+	
+    
     $wp_customize->remove_section( 'header_image' );
 
     /* theme notes */	
@@ -336,14 +336,6 @@ function cwp_megar_customize_register( $wp_customize ) {
         )
     );
 
-
-
-    $wp_customize->add_section('site_colors' , array(
-        'title'     => __('Site colors', 'cwp-megaresponsive-pro'),
-        'priority'  => 170
-    ));
-
-
     $wp_customize->add_setting(
         'site_colors_main_title',
         array(
@@ -356,9 +348,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_main_title',
             array(
                 'label'      => __( 'Site title', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_main_title',
-                'priority'   => 0
+                'priority'   => 30
             )
         )
     );
@@ -376,9 +368,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color',
             array(
                 'label'      => __( 'Header background', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_header_bg',
-                'priority'   => 1
+                'priority'   => 31
             )
         )
     );
@@ -396,9 +388,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_border',
             array(
                 'label'      => __( 'Header border', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_header_borderbottom',
-                'priority'   => 2
+                'priority'   => 32
             )
         )
     );
@@ -416,9 +408,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_menu',
             array(
                 'label'      => __( 'Header menu text', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_header_menu',
-                'priority'   => 3
+                'priority'   => 33
             )
         )
     );
@@ -436,9 +428,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_menu_hover',
             array(
                 'label'      => __( 'Header menu over', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_header_menu_hover',
-                'priority'   => 4
+                'priority'   => 34
             )
         )
     );
@@ -456,9 +448,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_buttons',
             array(
                 'label'      => __( 'Buttons', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_buttons',
-                'priority'   => 5
+                'priority'   => 35
             )
         )
     );
@@ -476,9 +468,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_buttons_text',
             array(
                 'label'      => __( 'Buttons text', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_buttons_text',
-                'priority'   => 6
+                'priority'   => 36
             )
         )
     );
@@ -496,9 +488,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_links',
             array(
                 'label'      => __( 'Links', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_links',
-                'priority'   => 7
+                'priority'   => 37
             )
         )
     );
@@ -516,9 +508,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_text',
             array(
                 'label'      => __( 'Text', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_text',
-                'priority'   => 8
+                'priority'   => 38
             )
         )
     );
@@ -535,9 +527,9 @@ function cwp_megar_customize_register( $wp_customize ) {
             'link_color_title',
             array(
                 'label'      => __( 'Title', 'cwp-megaresponsive-pro' ),
-                'section'    => 'site_colors',
+                'section'    => 'colors',
                 'settings'   => 'site_colors_title',
-                'priority'   => 9
+                'priority'   => 39 
             )
         )
     );
