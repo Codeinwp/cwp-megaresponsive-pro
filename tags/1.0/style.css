@@ -7,7 +7,7 @@ License URI: license.txt
 Author: codeinwp
 Author URI: Codeinwp.com
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, white, yellow, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, threaded-comments, translation-ready
-Version: 1.1
+Version: 1.0
 MegaResponsive Pro is based on the _s (Underscores) starter theme by Automattic Inc., licensed under GNU General Public License.
 */
 
@@ -2471,18 +2471,7 @@ input[type="search"] {
 
 }
 
-#wp-calendar { width: 100%; font-size: 11px; }
-#wp-calendar thead th { background: #f5f5f5; border: 1px solid #ddd; border-top: none; font-size: 11px; }
-#wp-calendar tbody td { text-align: center; border: 1px solid #ddd; line-height: 2.5em; transition: background 0.15s ease; -webkit-transition: background 0.15s ease; -o-transition: background 0.15s ease; -moz-transition: background 0.15s ease; }
-#wp-calendar tbody td:hover { background: #f1f1f1; color: #333; }
-#wp-calendar tbody td a { display: block; text-decoration: none; background: #f1f1f1; color: #333; }
-#wp-calendar tbody td:hover a { background: #4d4d4d; color: #fff; }
-#wp-calendar tfoot td { padding-top: 1px; padding: 4px; }
-#wp-calendar caption { cursor: pointer; font-size: 13px; text-transform: uppercase; margin: 0; padding: 12px; outline: 0 none !important; background: #3b86b0; color: #fff; }
-#wp-calendar tbody a { display: block; text-decoration: underline; }
-#wp-calendar th { text-align: center; border: 1px solid transparent; border-top: none; padding: 7px 0; color: #a7a7a7; }
-#footer #wp-calendar thead th { background: #222 }
-#footer #wp-calendar tbody td { border-color: #222 }
+
 
 /* =Infinite Scroll
 
