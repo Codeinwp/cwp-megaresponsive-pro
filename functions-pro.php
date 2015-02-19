@@ -101,7 +101,7 @@ function cwp_megaresponsive_pro_related_post(){
 function cwp_megaresponsive_pro_latest_news(){
 
 	$cwp_megaresponsive_pro_latest_news_box = get_theme_mod('latest_news_box');
-	if( !empty($cwp_megaresponsive_pro_latest_news_box) || !isset($cwp_megaresponsive_pro_latest_news_box) ):
+	if( $cwp_megaresponsive_pro_latest_news_box != 1 ):
 ?>
  	<!-- Latest news box -->
    	<div class="latest-news-wrap">
@@ -157,7 +157,7 @@ function cwp_megaresponsive_pro_home_slider() {
 
 	$cwp_megaresponsive_pro_show_slider = get_theme_mod('show_slider');
 	
-	if( !empty($cwp_megaresponsive_pro_show_slider) || !isset($cwp_megaresponsive_pro_show_slider) ):
+	if( $cwp_megaresponsive_pro_show_slider != 1 ):
 
 		$cwp_megaresponsive_pro_slider_category = get_theme_mod('tcx_category');
 
@@ -256,7 +256,7 @@ function cwp_megaresponsive_pro_latest_post_category() {
 
 	$display_categories_box = get_theme_mod( 'display_categories_box' );
 	
-	if ( !empty($display_categories_box) || !isset($display_categories_box) ): ?>
+	if ( $display_categories_box != 1 ): ?>
 
             		<div class="frontpage-latest-post-wrap">
             			<?php for ( $i=1; $i < 5; $i++ ) { ?>
