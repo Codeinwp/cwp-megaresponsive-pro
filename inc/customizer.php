@@ -94,15 +94,13 @@ function cwp_megar_customize_register( $wp_customize ) {
     ));
 
     /* Latest new box */
-    $wp_customize->add_setting('latest_news_box', array(
-        'default'    => '1',
-    ));
+    $wp_customize->add_setting('latest_news_box');
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
             'latest_news_box',
             array(
-                'label'     => __('Display Latest news Box', 'cwp-megaresponsive-pro'),
+                'label'     => __('Hide Latest news Box', 'cwp-megaresponsive-pro'),
                 'section'   => 'frontpage',
                 'settings'  => 'latest_news_box',
                 'type'      => 'checkbox',
@@ -112,18 +110,14 @@ function cwp_megar_customize_register( $wp_customize ) {
     );
 
     /* Latest new box */
-    $wp_customize->add_setting(
-        'show_slider', 
-        array(
-            'default'    => '1',
-        )
-    );
+    $wp_customize->add_setting('show_slider');
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
             'show_slider',
             array(
-                'label'     => __('Display Slider', 'cwp-megaresponsive-pro'),
+                'label'     => __('Hide Slider', 'cwp-megaresponsive-pro'),
                 'section'   => 'frontpage',
                 'settings'  => 'show_slider',
                 'type'      => 'checkbox',
@@ -179,15 +173,13 @@ function cwp_megar_customize_register( $wp_customize ) {
 
 
     /* Latest new box */
-    $wp_customize->add_setting('display_categories_box', array(
-        'default'    => '1',
-    ));
+    $wp_customize->add_setting('display_categories_box', array());
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
             'display_categories_box',
             array(
-                'label'     => __('Display posts by category', 'cwp-megaresponsive-pro'),
+                'label'     => __('Hide posts by category', 'cwp-megaresponsive-pro'),
                 'section'   => 'frontpage',
                 'settings'  => 'display_categories_box',
                 'type'      => 'checkbox',
@@ -271,15 +263,13 @@ function cwp_megar_customize_register( $wp_customize ) {
 
 
     /* Latest new box */
-    $wp_customize->add_setting('latest_post_box', array(
-        'default'    => '1',
-    ));
+    $wp_customize->add_setting('latest_post_box');
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
             'latest_post_box',
             array(
-                'label'     => __('Display Latest posts', 'cwp-megaresponsive-pro'),
+                'label'     => __('Hide Latest posts', 'cwp-megaresponsive-pro'),
                 'section'   => 'frontpage',
                 'settings'  => 'latest_post_box',
                 'type'      => 'checkbox',

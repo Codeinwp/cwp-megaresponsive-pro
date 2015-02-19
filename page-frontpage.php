@@ -48,7 +48,7 @@ $latest_post_box = get_theme_mod( 'latest_post_box' );
         			<?php if ( function_exists( 'cwp_megaresponsive_pro_latest_post_category') ): cwp_megaresponsive_pro_latest_post_category(); endif; ?>
 
 					
-                    <?php if ( get_theme_mod('latest_post_box') ): ?>
+                    <?php if ( get_theme_mod('latest_post_box',1) ): ?>
 						
                         <div id="main-content">
                             <div id="main-content-inner" class="list-posts"></div>
