@@ -1,5 +1,13 @@
 
 
+### 1.1.4 - 20/04/2015
+
+ Changes: 
+
+
+ * improved update system
+
+
 ### 1.1.3 - 19/02/2015
 
  Changes: 
