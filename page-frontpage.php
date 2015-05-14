@@ -33,6 +33,8 @@ $latest_post_box = get_theme_mod( 'latest_post_box' );
     			?>">
 
             <div class="main-content">
+			
+				
 	            <div class="frontpage-wrap" style="<?php 
     				if( ($sidebar_position === 'one-sidebar-right') || ($sidebar_position === 'full-width') ): 
     					echo 'margin-left: 0';
@@ -40,6 +42,12 @@ $latest_post_box = get_theme_mod( 'latest_post_box' );
     					echo 'margin-left: 0; margin-right: 30px';
     				endif;
     			?>">
+				<?php	
+				$has_header = get_header_image(); 
+				if($has_header != false) :?>
+					<img src="<?php header_image(); ?>" alt="" style="margin-bottom:20px;" />
+				<?php endif; ?>
+					
 
         			<?php if ( function_exists( 'cwp_megaresponsive_pro_latest_news') ): cwp_megaresponsive_pro_latest_news(); endif; ?>
 
