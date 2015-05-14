@@ -36,6 +36,7 @@ endif;
                 ?>">
 
             <div class="main-content">
+				
                 <div class="frontpage-wrap" style="<?php 
                     if( ($sidebar_position==='one-sidebar-right') || ($sidebar_position==='full-width') ): 
                         echo 'margin-left: 0';
@@ -43,6 +44,11 @@ endif;
                         echo 'margin-left: 0; margin-right: 30px';
                     endif;
                 ?>">
+				<?php	
+				$has_header = get_header_image(); 
+				if($has_header != false) :?>
+					<img src="<?php header_image(); ?>" alt="" />
+				<?php endif; ?>
 
                     <div id="main-content">
                         <div id="main-content-inner" class="list-posts"></div>

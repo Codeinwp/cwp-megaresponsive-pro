@@ -26,7 +26,7 @@ function cwp_megar_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
 	
     
-    $wp_customize->remove_section( 'header_image' );
+    //$wp_customize->remove_section( 'header_image' );
 
     /* theme notes */	
     $wp_customize->add_section( 'codeinwp_theme_notes' , 

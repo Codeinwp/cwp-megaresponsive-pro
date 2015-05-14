@@ -48,9 +48,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php $has_header = get_header_image(); if($has_header != false) :?>
-<img src="<?php header_image(); ?>" alt="" />
-<?php endif; ?>
+
 
 <div id="page" class="hfeed site">
 
