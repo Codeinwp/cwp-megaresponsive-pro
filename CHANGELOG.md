@@ -1,5 +1,13 @@
 
 
+### 1.1.5 - 14/05/2015
+
+ Changes: 
+
+
+ * Added header image
+
+
 ### 1.1.4 - 20/04/2015
 
  Changes: 
