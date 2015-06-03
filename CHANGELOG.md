@@ -1,5 +1,13 @@
 
 
+### 1.1.6 - 03/06/2015
+
+ Changes: 
+
+
+ * Fixed js conflict
+
+
 ### 1.1.5 - 14/05/2015
 
  Changes: 
