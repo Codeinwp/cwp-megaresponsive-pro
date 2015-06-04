@@ -1,5 +1,13 @@
 
 
+### 1.1.7 - 04/06/2015
+
+ Changes: 
+
+
+ * Limit latest posts by number set up in Reading setting
+
+
 ### 1.1.6 - 03/06/2015
 
  Changes: 
