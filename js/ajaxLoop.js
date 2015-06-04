@@ -13,10 +13,10 @@ jQuery(function($){
 	var tagvar = $("#tag_id").val();
 	
 	
-		var load_posts = function(){
+		var load_posts = function(parm){
             $.ajax({
                 type       : "GET",
-                data       : {action: 'cwp_loop',numPosts : 4, pageNumber: page, catNumber: catid, yearPar: yearvar, monthPar: monthvar, authorPar: authorvar, tagPar: tagvar},
+                data       : {action: 'cwp_loop',numPosts : parm, pageNumber: page, catNumber: catid, yearPar: yearvar, monthPar: monthvar, authorPar: authorvar, tagPar: tagvar},
                 dataType   : "html",
                 url        : ajaxurl,
                 beforeSend : function(data,settings){
@@ -30,10 +30,8 @@ jQuery(function($){
   				
                 },
                 success    : function(data){
-					page++;
 					$("#temp_load").remove();
                     $data = $(data);
-					//console.log($data);
                      if( $data.length != 0 ){ 
                         $content.append($data); 
                      }
@@ -49,20 +47,26 @@ jQuery(function($){
 		}
 		
 	
-    
-
+		var cwp_megar_default_posts_per_page = $("#cwp_megar_default_posts_per_page").val();
+		if(typeof cwp_megar_default_posts_per_page == 'undefined') {
+			cwp_megar_default_posts_per_page = 10;
+		}
+		
     	$(window).scroll(function(){
           
         	var content_offset = $content.offset(); 
             
-            	if(load == true) {
-                	load_posts();
-			page++;
-		}
+            	if((load == true) && ((page * 4) < cwp_megar_default_posts_per_page)) {
+                	load_posts(4);
+					page++;
+				}
+				else if((load == true) && (((page * 4) - cwp_megar_default_posts_per_page) < 4)) {
+					load_posts(((page * 4) - cwp_megar_default_posts_per_page));
+					page++;
+				}
+				
     	});
   
-load_posts();
+	load_posts(4);
+	page++;
 });
-
-
-    
