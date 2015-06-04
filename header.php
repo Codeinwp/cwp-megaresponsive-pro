@@ -51,7 +51,7 @@
 
 
 <div id="page" class="hfeed site">
-
+	
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 	
@@ -74,3 +74,9 @@
 
 	<div id="main" class="site-main">
     	<div class="container">
+			<?php 
+				$cwp_megar_default_posts_per_page = get_option( 'posts_per_page' );
+				if( !empty($cwp_megar_default_posts_per_page) ):
+					echo '<input type="hidden" value="'.$cwp_megar_default_posts_per_page.'" id="cwp_megar_default_posts_per_page">';
+				endif;
+			?>
