@@ -50,8 +50,7 @@ endif;
 									<?php
 										if ( is_category() ) :
 											single_cat_title();
-											$cat_name = single_cat_title('',false);
-											$cat_id = get_cat_ID($cat_name);
+											$cat_id = get_query_var('cat');
 										?>	
 											<input type="hidden" id="catid" value="<?php echo $cat_id; ?>" />		
 										<?php	
