@@ -199,7 +199,13 @@ function cwp_megaresponsive_pro_loop_callback() {
 	$authorr = (isset($_GET['authorPar'])) ? $_GET['authorPar'] : -1;
 	$tagg = (isset($_GET['tagPar'])) ? $_GET['tagPar'] : -1;
 	
-
+	$posts_displayed_array = (isset($_GET['uniqueNames'])) ? $_GET['uniqueNames'] : array();
+	if( !empty($posts_displayed_array) ):
+		foreach($posts_displayed_array as $post_displayed_k => $post_displayed_v):
+			$posts_displayed_array[$post_displayed_k] = substr($post_displayed_v, 5);
+		endforeach;
+	endif;
+	
 	if($catt != -1):
  
 	query_posts(array(
@@ -207,7 +213,7 @@ function cwp_megaresponsive_pro_loop_callback() {
        'paged'          => $page,
 	   'cat' 			=>  $catt,
 	   'post_status' 	=> 'publish',
-	   'post__not_in' 	=> get_option( 'sticky_posts' )
+	   'post__not_in' 	=> $posts_displayed_array
 	));
 	elseif($yearr != -1 && $monthh != -1):
  
@@ -217,7 +223,7 @@ function cwp_megaresponsive_pro_loop_callback() {
 	   'year' 			=>  $yearr,
 	   'monthnum' 		=> $monthh,
 	   'post_status' 	=> 'publish',
-	   'post__not_in' 	=> get_option( 'sticky_posts' )
+	   'post__not_in' 	=> $posts_displayed_array
 	));
 	
 	elseif($yearr != -1):
@@ -227,7 +233,7 @@ function cwp_megaresponsive_pro_loop_callback() {
        'paged'          => $page,
 	   'year' 			=>  $yearr,
 	   'post_status' 	=> 'publish',
-	   'post__not_in' 	=> get_option( 'sticky_posts' )
+	   'post__not_in' 	=> $posts_displayed_array
 	));
 	
 	elseif($authorr != -1):
@@ -237,7 +243,7 @@ function cwp_megaresponsive_pro_loop_callback() {
        'paged'          => $page,
 	   'author' 		=>  $authorr,
 	   'post_status'	=> 'publish',
-	   'post__not_in'	=> get_option( 'sticky_posts' )
+	   'post__not_in' 	=> $posts_displayed_array
 	));
 	
 	elseif($tagg != -1):
@@ -247,7 +253,7 @@ function cwp_megaresponsive_pro_loop_callback() {
        'paged'          => $page,
 	   'tag' 			=>  $tagg,
 	   'post_status' 	=> 'publish',
-	   'post__not_in' 	=> get_option( 'sticky_posts' )
+	   'post__not_in' 	=> $posts_displayed_array
 	));
 	
 	else:
@@ -256,10 +262,10 @@ function cwp_megaresponsive_pro_loop_callback() {
        'posts_per_page' => $numPosts,
        'paged'          => $page,
 	   'post_status' 	=> 'publish',
-	   'post__not_in' 	=> get_option( 'sticky_posts' )
+	   'post__not_in' 	=> $posts_displayed_array
 	));
 	endif;
-	
+
 	while ( have_posts() ) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -312,6 +318,6 @@ function cwp_megaresponsive_pro_loop_callback() {
        
        
       <?php endwhile;
-			
+	  
 	die(); // this is required to return a proper result
 }

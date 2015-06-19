@@ -12,11 +12,23 @@ jQuery(function($){
 	var authorvar = $("#author_id").val();
 	var tagvar = $("#tag_id").val();
 	
-	
-		var load_posts = function(parm){
+	var posts_displayed_array = new Array();
+	var uniqueNames = new Array();
+
+
+	var load_posts = function(parm){
+		
+			jQuery('.list-posts > article').each(function(){
+				posts_displayed_array.push(jQuery(this).attr('id')); 
+			});
+			$.each(posts_displayed_array, function(i, el){
+				if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+			});
+
+			
             $.ajax({
                 type       : "GET",
-                data       : {action: 'cwp_loop',numPosts : parm, pageNumber: page, catNumber: catid, yearPar: yearvar, monthPar: monthvar, authorPar: authorvar, tagPar: tagvar},
+                data       : {action: 'cwp_loop',numPosts : parm, pageNumber: page, catNumber: catid, yearPar: yearvar, monthPar: monthvar, authorPar: authorvar, tagPar: tagvar, uniqueNames: uniqueNames},
                 dataType   : "html",
                 url        : ajaxurl,
                 beforeSend : function(data,settings){
@@ -38,12 +50,23 @@ jQuery(function($){
                     else { 
                           load = false;
                     }
+					
+					jQuery('.list-posts > article').each(function(){
+						  posts_displayed_array.push(jQuery(this).attr('id')); 	
+					});
+					$.each(posts_displayed_array, function(i, el){
+						if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+					});
+					
                 },
                 error     : function(jqXHR, textStatus, errorThrown) {
                     $("#temp_load").remove();
                     
                 }
 			});
+			
+			
+			
 		}
 		
 	
@@ -53,20 +76,23 @@ jQuery(function($){
 		}
 		
     	$(window).scroll(function(){
-          
-        	var content_offset = $content.offset(); 
-            
-            	if((load == true) && ((page * 4) < cwp_megar_default_posts_per_page)) {
-                	load_posts(4);
+			
+			if(uniqueNames.length < cwp_megar_default_posts_per_page) {
+	
+				if((uniqueNames.length + 4) > cwp_megar_default_posts_per_page) {
+					load_posts(cwp_megar_default_posts_per_page - uniqueNames.length);
 					page++;
 				}
-				else if((load == true) && (((page * 4) - cwp_megar_default_posts_per_page) < 4)) {
-					load_posts(((page * 4) - cwp_megar_default_posts_per_page));
+				else {
+					load_posts(4);
 					page++;
-				}
+				}	
 				
+			}	
+			
     	});
   
 	load_posts(4);
 	page++;
+	
 });
