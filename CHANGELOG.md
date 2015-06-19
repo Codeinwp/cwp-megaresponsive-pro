@@ -1,5 +1,13 @@
 
 
+### 1.2.0 - 19/06/2015
+
+ Changes: 
+
+
+ * Small improvements to not show replicated posts
+
+
 ### 1.1.7 - 04/06/2015
 
  Changes: 
